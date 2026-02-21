@@ -4680,364 +4680,364 @@ const vocabularyData = [
     "german": "Schuh",
     "plural": ",-e",
     "english": "shoe",
-    "category": "Lektion 11: Kleidung und mehr - Handwritten Notes"
+    "category": "Lektion 11: Kleidung und mehr - Clothing & Accessories"
   },
   {
     "article": "die",
     "german": "Bluse",
     "plural": ",-n",
     "english": "blouse",
-    "category": "Lektion 11: Kleidung und mehr - Handwritten Notes"
+    "category": "Lektion 11: Kleidung und mehr - Clothing & Accessories"
   },
   {
     "article": "das",
     "german": "Kleid",
     "plural": ",-er",
     "english": "dress",
-    "category": "Lektion 11: Kleidung und mehr - Handwritten Notes"
+    "category": "Lektion 11: Kleidung und mehr - Clothing & Accessories"
   },
   {
     "article": "der",
     "german": "Stiefel",
     "plural": ",-",
     "english": "boot",
-    "category": "Lektion 11: Kleidung und mehr - Handwritten Notes"
+    "category": "Lektion 11: Kleidung und mehr - Clothing & Accessories"
   },
   {
     "article": "das",
     "german": "Tuch",
     "plural": ",-\"er",
     "english": "rag/cloth/scarf",
-    "category": "Lektion 11: Kleidung und mehr - Handwritten Notes"
+    "category": "Lektion 11: Kleidung und mehr - Clothing & Accessories"
   },
   {
     "article": "die",
     "german": "Mütze",
     "plural": ",-n",
     "english": "cap",
-    "category": "Lektion 11: Kleidung und mehr - Handwritten Notes"
+    "category": "Lektion 11: Kleidung und mehr - Clothing & Accessories"
   },
   {
     "article": "die",
     "german": "Jeans",
     "plural": "",
     "english": "jeans",
-    "category": "Lektion 11: Kleidung und mehr - Handwritten Notes"
+    "category": "Lektion 11: Kleidung und mehr - Clothing & Accessories"
   },
   {
     "article": "die",
     "german": "Tasche",
     "plural": ",-n",
     "english": "bag",
-    "category": "Lektion 11: Kleidung und mehr - Handwritten Notes"
+    "category": "Lektion 11: Kleidung und mehr - Clothing & Accessories"
   },
   {
     "article": "die",
     "german": "Jacke",
     "plural": ",-n",
     "english": "jacket",
-    "category": "Lektion 11: Kleidung und mehr - Handwritten Notes"
+    "category": "Lektion 11: Kleidung und mehr - Clothing & Accessories"
   },
   {
     "article": "die",
     "german": "Krawatte",
     "plural": ",-n",
     "english": "tie",
-    "category": "Lektion 11: Kleidung und mehr - Handwritten Notes"
+    "category": "Lektion 11: Kleidung und mehr - Clothing & Accessories"
   },
   {
     "article": "der",
     "german": "Anzug",
     "plural": ",-\"e",
     "english": "suit",
-    "category": "Lektion 11: Kleidung und mehr - Handwritten Notes"
+    "category": "Lektion 11: Kleidung und mehr - Clothing & Accessories"
   },
   {
     "article": "das",
     "german": "Hemd",
     "plural": ",-en",
     "english": "shirt",
-    "category": "Lektion 11: Kleidung und mehr - Handwritten Notes"
+    "category": "Lektion 11: Kleidung und mehr - Clothing & Accessories"
   },
   {
     "article": "die",
     "german": "Hose",
     "plural": ",-n",
     "english": "pant",
-    "category": "Lektion 11: Kleidung und mehr - Handwritten Notes"
+    "category": "Lektion 11: Kleidung und mehr - Clothing & Accessories"
   },
   {
     "article": "der",
     "german": "Rock",
     "plural": ",-\"e",
     "english": "skirt",
-    "category": "Lektion 11: Kleidung und mehr - Handwritten Notes"
+    "category": "Lektion 11: Kleidung und mehr - Clothing & Accessories"
   },
   {
     "article": "der",
     "german": "Schal",
     "plural": ",-e",
     "english": "shawl",
-    "category": "Lektion 11: Kleidung und mehr - Handwritten Notes"
+    "category": "Lektion 11: Kleidung und mehr - Clothing & Accessories"
   },
   {
     "article": "die",
     "german": "Kleidung",
     "plural": ",-en",
     "english": "clothes",
-    "category": "Lektion 11: Kleidung und mehr - Handwritten Notes"
+    "category": "Lektion 11: Kleidung und mehr - Clothing & Accessories"
   },
   {
     "article": "das",
     "german": "T-Shirt",
     "plural": ",-s",
     "english": "T-Shirt",
-    "category": "Lektion 11: Kleidung und mehr - Handwritten Notes"
+    "category": "Lektion 11: Kleidung und mehr - Clothing & Accessories"
   },
   {
     "article": "der",
     "german": "Mantel",
     "plural": ",-\"",
     "english": "Coat",
-    "category": "Lektion 11: Kleidung und mehr - Handwritten Notes"
+    "category": "Lektion 11: Kleidung und mehr - Clothing & Accessories"
   },
   {
     "article": "die",
     "german": "Klamotte",
     "plural": ",-n",
     "english": "clothes",
-    "category": "Lektion 11: Kleidung und mehr - Handwritten Notes"
+    "category": "Lektion 11: Kleidung und mehr - Clothing & Accessories"
   },
   {
     "article": "die",
     "german": "Uhr",
     "plural": ",-en",
     "english": "clock",
-    "category": "Lektion 11: Kleidung und mehr - Handwritten Notes"
+    "category": "Lektion 11: Kleidung und mehr - Clothing & Accessories"
   },
   {
     "article": "die",
     "german": "Kasse",
     "plural": ",-n",
     "english": "cashiers",
-    "category": "Lektion 11: Kleidung und mehr - Handwritten Notes"
+    "category": "Lektion 11: Kleidung und mehr - Shopping & Descriptions"
   },
   {
     "article": "das",
     "german": "Kaufhaus",
     "plural": ",-\"er",
     "english": "shopping mall",
-    "category": "Lektion 11: Kleidung und mehr - Handwritten Notes"
+    "category": "Lektion 11: Kleidung und mehr - Shopping & Descriptions"
   },
   {
     "article": "der",
     "german": "Buchladen",
     "plural": ",-\"",
     "english": "bookshop",
-    "category": "Lektion 11: Kleidung und mehr - Handwritten Notes"
+    "category": "Lektion 11: Kleidung und mehr - Shopping & Descriptions"
   },
   {
     "article": "der",
     "german": "Laden",
     "plural": ",-\"",
     "english": "shop",
-    "category": "Lektion 11: Kleidung und mehr - Handwritten Notes"
+    "category": "Lektion 11: Kleidung und mehr - Shopping & Descriptions"
   },
   {
     "article": "der",
     "german": "Schmuck",
     "plural": "",
     "english": "jewelry",
-    "category": "Lektion 11: Kleidung und mehr - Handwritten Notes"
+    "category": "Lektion 11: Kleidung und mehr - Shopping & Descriptions"
   },
   {
     "article": "der",
     "german": "Secondhand-Laden",
     "plural": ",-\"",
     "english": "secondhand shop",
-    "category": "Lektion 11: Kleidung und mehr - Handwritten Notes"
+    "category": "Lektion 11: Kleidung und mehr - Shopping & Descriptions"
   },
   {
     "article": "das",
     "german": "Kleidergeschäft",
     "plural": ",-e",
     "english": "clothes shop",
-    "category": "Lektion 11: Kleidung und mehr - Handwritten Notes"
+    "category": "Lektion 11: Kleidung und mehr - Shopping & Descriptions"
   },
   {
     "article": "der",
     "german": "Shop",
     "plural": ",-s",
     "english": "shop",
-    "category": "Lektion 11: Kleidung und mehr - Handwritten Notes"
+    "category": "Lektion 11: Kleidung und mehr - Shopping & Descriptions"
   },
   {
     "article": "die",
     "german": "Mode",
     "plural": ",-n",
     "english": "fashion",
-    "category": "Lektion 11: Kleidung und mehr - Handwritten Notes"
+    "category": "Lektion 11: Kleidung und mehr - Shopping & Descriptions"
   },
   {
     "article": "",
     "german": "tragen",
     "plural": "",
     "english": "to wear, carry",
-    "category": "Lektion 11: Kleidung und mehr - Handwritten Notes"
+    "category": "Lektion 11: Kleidung und mehr - Shopping & Descriptions"
   },
   {
     "article": "",
     "german": "shoppen",
     "plural": "",
     "english": "to shop",
-    "category": "Lektion 11: Kleidung und mehr - Handwritten Notes"
+    "category": "Lektion 11: Kleidung und mehr - Shopping & Descriptions"
   },
   {
     "article": "",
     "german": "lang",
     "plural": "",
     "english": "long",
-    "category": "Lektion 11: Kleidung und mehr - Handwritten Notes"
+    "category": "Lektion 11: Kleidung und mehr - Shopping & Descriptions"
   },
   {
     "article": "",
     "german": "eng",
     "plural": "",
     "english": "tight",
-    "category": "Lektion 11: Kleidung und mehr - Handwritten Notes"
+    "category": "Lektion 11: Kleidung und mehr - Shopping & Descriptions"
   },
   {
     "article": "",
     "german": "doof",
     "plural": "",
     "english": "stupid",
-    "category": "Lektion 11: Kleidung und mehr - Handwritten Notes"
+    "category": "Lektion 11: Kleidung und mehr - Shopping & Descriptions"
   },
   {
     "article": "",
     "german": "besser",
     "plural": "",
     "english": "better",
-    "category": "Lektion 11: Kleidung und mehr - Handwritten Notes"
+    "category": "Lektion 11: Kleidung und mehr - Shopping & Descriptions"
   },
   {
     "article": "",
     "german": "weit",
     "plural": "",
     "english": "far",
-    "category": "Lektion 11: Kleidung und mehr - Handwritten Notes"
+    "category": "Lektion 11: Kleidung und mehr - Shopping & Descriptions"
   },
   {
     "article": "",
     "german": "kurz",
     "plural": "",
     "english": "short",
-    "category": "Lektion 11: Kleidung und mehr - Handwritten Notes"
+    "category": "Lektion 11: Kleidung und mehr - Shopping & Descriptions"
   },
   {
     "article": "",
     "german": "bequem",
     "plural": "",
     "english": "comfortable",
-    "category": "Lektion 11: Kleidung und mehr - Handwritten Notes"
+    "category": "Lektion 11: Kleidung und mehr - Shopping & Descriptions"
   },
   {
     "article": "",
     "german": "auch",
     "plural": "",
     "english": "also",
-    "category": "Lektion 11: Kleidung und mehr - Handwritten Notes"
+    "category": "Lektion 11: Kleidung und mehr - Shopping & Descriptions"
   },
   {
     "article": "",
     "german": "viel zu",
     "plural": "",
     "english": "too many",
-    "category": "Lektion 11: Kleidung und mehr - Handwritten Notes"
+    "category": "Lektion 11: Kleidung und mehr - Shopping & Descriptions"
   },
   {
     "article": "",
     "german": "so",
     "plural": "",
     "english": "so, thus",
-    "category": "Lektion 11: Kleidung und mehr - Handwritten Notes"
+    "category": "Lektion 11: Kleidung und mehr - Shopping & Descriptions"
   },
   {
     "article": "",
     "german": "anprobieren",
     "plural": "",
     "english": "to try sth on",
-    "category": "Lektion 11: Kleidung und mehr - Handwritten Notes"
+    "category": "Lektion 11: Kleidung und mehr - Actions & Opinions"
   },
   {
     "article": "",
     "german": "ankommen, er kommt an, ist angekommen",
     "plural": "",
     "english": "to arrive",
-    "category": "Lektion 11: Kleidung und mehr - Handwritten Notes"
+    "category": "Lektion 11: Kleidung und mehr - Actions & Opinions"
   },
   {
     "article": "",
     "german": "nerven",
     "plural": "",
     "english": "to irritate",
-    "category": "Lektion 11: Kleidung und mehr - Handwritten Notes"
+    "category": "Lektion 11: Kleidung und mehr - Actions & Opinions"
   },
   {
     "article": "",
     "german": "kriegen",
     "plural": "",
     "english": "to receive",
-    "category": "Lektion 11: Kleidung und mehr - Handwritten Notes"
+    "category": "Lektion 11: Kleidung und mehr - Actions & Opinions"
   },
   {
     "article": "",
     "german": "zurückschicken",
     "plural": "",
     "english": "to send back",
-    "category": "Lektion 11: Kleidung und mehr - Handwritten Notes"
+    "category": "Lektion 11: Kleidung und mehr - Actions & Opinions"
   },
   {
     "article": "",
     "german": "umtauschen",
     "plural": "",
     "english": "to exchange",
-    "category": "Lektion 11: Kleidung und mehr - Handwritten Notes"
+    "category": "Lektion 11: Kleidung und mehr - Actions & Opinions"
   },
   {
     "article": "",
     "german": "empfehlen, er empfiehlt, hat empfohlen",
     "plural": "",
     "english": "to recommend",
-    "category": "Lektion 11: Kleidung und mehr - Handwritten Notes"
+    "category": "Lektion 11: Kleidung und mehr - Actions & Opinions"
   },
   {
     "article": "",
     "german": "im Internet bestellen",
     "plural": "",
     "english": "order online",
-    "category": "Lektion 11: Kleidung und mehr - Handwritten Notes"
+    "category": "Lektion 11: Kleidung und mehr - Actions & Opinions"
   },
   {
     "article": "",
     "german": "entdecken",
     "plural": "",
     "english": "to discover",
-    "category": "Lektion 11: Kleidung und mehr - Handwritten Notes"
+    "category": "Lektion 11: Kleidung und mehr - Actions & Opinions"
   },
   {
     "article": "",
     "german": "passen",
     "plural": "",
     "english": "to suit, match",
-    "category": "Lektion 11: Kleidung und mehr - Handwritten Notes"
+    "category": "Lektion 11: Kleidung und mehr - Actions & Opinions"
   },
   {
     "article": "",
     "german": "Was meinst du?",
     "plural": "",
     "english": "What do you think?",
-    "category": "Lektion 11: Kleidung und mehr - Handwritten Notes"
+    "category": "Lektion 11: Kleidung und mehr - Actions & Opinions"
   },
   {
     "article": "",
@@ -5051,412 +5051,412 @@ const vocabularyData = [
     "german": "anziehen, er zieht an, hat angezogen",
     "plural": "",
     "english": "to wear",
-    "category": "Lektion 11: Kleidung und mehr - Handwritten Notes"
+    "category": "Lektion 11: Kleidung und mehr - Actions & Opinions"
   },
   {
     "article": "",
     "german": "meinen",
     "plural": "",
     "english": "to mean sth, think sth",
-    "category": "Lektion 11: Kleidung und mehr - Handwritten Notes"
+    "category": "Lektion 11: Kleidung und mehr - Actions & Opinions"
   },
   {
     "article": "",
     "german": "gefallen, er gefällt, hat gefallen",
     "plural": "",
     "english": "to appeal to someone",
-    "category": "Lektion 11: Kleidung und mehr - Handwritten Notes"
+    "category": "Lektion 11: Kleidung und mehr - Actions & Opinions"
   },
   {
     "article": "",
     "german": "ausziehen, er zieht aus, hat ausgezogen",
     "plural": "",
     "english": "to remove, take sth off",
-    "category": "Lektion 11: Kleidung und mehr - Handwritten Notes"
+    "category": "Lektion 11: Kleidung und mehr - Actions & Opinions"
   },
   {
     "article": "das",
     "german": "Produkt",
     "plural": ",-e",
     "english": "product",
-    "category": "Lektion 11: Kleidung und mehr - Handwritten Notes"
+    "category": "Lektion 11: Kleidung und mehr - Everyday Objects & Store Details"
   },
   {
     "article": "die",
     "german": "Kosmetik",
     "plural": ",-a",
     "english": "cosmetic",
-    "category": "Lektion 11: Kleidung und mehr - Handwritten Notes"
+    "category": "Lektion 11: Kleidung und mehr - Everyday Objects & Store Details"
   },
   {
     "article": "das",
     "german": "Papier",
     "plural": ",-e",
     "english": "paper",
-    "category": "Lektion 11: Kleidung und mehr - Handwritten Notes"
+    "category": "Lektion 11: Kleidung und mehr - Everyday Objects & Store Details"
   },
   {
     "article": "der",
     "german": "USB-Stick",
     "plural": ",-s",
     "english": "USB Stick",
-    "category": "Lektion 11: Kleidung und mehr - Handwritten Notes"
+    "category": "Lektion 11: Kleidung und mehr - Everyday Objects & Store Details"
   },
   {
     "article": "das",
     "german": "Parfüm",
     "plural": ",-e",
     "english": "perfume",
-    "category": "Lektion 11: Kleidung und mehr - Handwritten Notes"
+    "category": "Lektion 11: Kleidung und mehr - Everyday Objects & Store Details"
   },
   {
     "article": "das",
     "german": "Duschgel",
     "plural": ",-s",
     "english": "showergel",
-    "category": "Lektion 11: Kleidung und mehr - Handwritten Notes"
+    "category": "Lektion 11: Kleidung und mehr - Everyday Objects & Store Details"
   },
   {
     "article": "der",
     "german": "Haushalt",
     "plural": ",-e",
     "english": "household",
-    "category": "Lektion 11: Kleidung und mehr - Handwritten Notes"
+    "category": "Lektion 11: Kleidung und mehr - Everyday Objects & Store Details"
   },
   {
     "article": "das",
     "german": "Untergeschoss",
     "plural": ",-e",
     "english": "basement",
-    "category": "Lektion 11: Kleidung und mehr - Handwritten Notes"
+    "category": "Lektion 11: Kleidung und mehr - Everyday Objects & Store Details"
   },
   {
     "article": "die",
     "german": "Kamera",
     "plural": ",-s",
     "english": "camera",
-    "category": "Lektion 11: Kleidung und mehr - Handwritten Notes"
+    "category": "Lektion 11: Kleidung und mehr - Everyday Objects & Store Details"
   },
   {
     "article": "die",
     "german": "Zeitschrift",
     "plural": ",-en",
     "english": "magazine",
-    "category": "Lektion 11: Kleidung und mehr - Handwritten Notes"
+    "category": "Lektion 11: Kleidung und mehr - Everyday Objects & Store Details"
   },
   {
     "article": "der",
     "german": "Kugelschreiber",
     "plural": ",-",
     "english": "pen",
-    "category": "Lektion 11: Kleidung und mehr - Handwritten Notes"
+    "category": "Lektion 11: Kleidung und mehr - Everyday Objects & Store Details"
   },
   {
     "article": "der",
     "german": "Bleistift",
     "plural": ",-e",
     "english": "pencil",
-    "category": "Lektion 11: Kleidung und mehr - Handwritten Notes"
+    "category": "Lektion 11: Kleidung und mehr - Everyday Objects & Store Details"
   },
   {
     "article": "",
     "german": "öffnen",
     "plural": "",
     "english": "to open",
-    "category": "Lektion 11: Kleidung und mehr - Handwritten Notes"
+    "category": "Lektion 11: Kleidung und mehr - Everyday Objects & Store Details"
   },
   {
     "article": "",
     "german": "schließen, er schließt, hat geschlossen",
     "plural": "",
     "english": "to close",
-    "category": "Lektion 11: Kleidung und mehr - Handwritten Notes"
+    "category": "Lektion 11: Kleidung und mehr - Everyday Objects & Store Details"
   },
   {
     "article": "",
     "german": "praktisch",
     "plural": "",
     "english": "practical",
-    "category": "Lektion 11: Kleidung und mehr - Handwritten Notes"
+    "category": "Lektion 11: Kleidung und mehr - Everyday Objects & Store Details"
   },
   {
     "article": "",
     "german": "zuhaben",
     "plural": "",
     "english": "to be shut, closed",
-    "category": "Lektion 11: Kleidung und mehr - Handwritten Notes"
+    "category": "Lektion 11: Kleidung und mehr - Everyday Objects & Store Details"
   },
   {
     "article": "die",
     "german": "Öffnungszeiten",
     "plural": "",
     "english": "opening timings",
-    "category": "Lektion 11: Kleidung und mehr - Handwritten Notes"
+    "category": "Lektion 11: Kleidung und mehr - Everyday Objects & Store Details"
   },
   {
     "article": "",
     "german": "auf sein",
     "plural": "",
     "english": "to be open",
-    "category": "Lektion 11: Kleidung und mehr - Handwritten Notes"
+    "category": "Lektion 11: Kleidung und mehr - Everyday Objects & Store Details"
   },
   {
     "article": "",
     "german": "täglich geöffnet von... bis ....",
     "plural": "",
     "english": "daily open from...till...",
-    "category": "Lektion 11: Kleidung und mehr - Handwritten Notes"
+    "category": "Lektion 11: Kleidung und mehr - Everyday Objects & Store Details"
   },
   {
     "article": "",
     "german": "zu sein",
     "plural": "",
     "english": "to be closed",
-    "category": "Lektion 11: Kleidung und mehr - Handwritten Notes"
+    "category": "Lektion 11: Kleidung und mehr - Everyday Objects & Store Details"
   },
   {
     "article": "",
     "german": "ich",
     "plural": "",
     "english": "I",
-    "category": "Lektion 11: Kleidung und mehr - Handwritten Notes"
+    "category": "Lektion 11: Kleidung und mehr - Pronouns"
   },
   {
     "article": "",
     "german": "du",
     "plural": "",
     "english": "you (informal)",
-    "category": "Lektion 11: Kleidung und mehr - Handwritten Notes"
+    "category": "Lektion 11: Kleidung und mehr - Pronouns"
   },
   {
     "article": "",
     "german": "er/es",
     "plural": "",
     "english": "he/it",
-    "category": "Lektion 11: Kleidung und mehr - Handwritten Notes"
+    "category": "Lektion 11: Kleidung und mehr - Pronouns"
   },
   {
     "article": "",
     "german": "sie",
     "plural": "",
     "english": "she / they",
-    "category": "Lektion 11: Kleidung und mehr - Handwritten Notes"
+    "category": "Lektion 11: Kleidung und mehr - Pronouns"
   },
   {
     "article": "",
     "german": "wir",
     "plural": "",
     "english": "we",
-    "category": "Lektion 11: Kleidung und mehr - Handwritten Notes"
+    "category": "Lektion 11: Kleidung und mehr - Pronouns"
   },
   {
     "article": "",
     "german": "ihr",
     "plural": "",
     "english": "you guys (plural informal)",
-    "category": "Lektion 11: Kleidung und mehr - Handwritten Notes"
+    "category": "Lektion 11: Kleidung und mehr - Pronouns"
   },
   {
     "article": "",
     "german": "Sie",
     "plural": "",
     "english": "You (formal)",
-    "category": "Lektion 11: Kleidung und mehr - Handwritten Notes"
+    "category": "Lektion 11: Kleidung und mehr - Pronouns"
   },
   {
     "article": "",
     "german": "mir",
     "plural": "",
     "english": "me (dative)",
-    "category": "Lektion 11: Kleidung und mehr - Handwritten Notes"
+    "category": "Lektion 11: Kleidung und mehr - Pronouns"
   },
   {
     "article": "",
     "german": "dir",
     "plural": "",
     "english": "you (dative)",
-    "category": "Lektion 11: Kleidung und mehr - Handwritten Notes"
+    "category": "Lektion 11: Kleidung und mehr - Pronouns"
   },
   {
     "article": "",
     "german": "ihm",
     "plural": "",
     "english": "him/it (dative)",
-    "category": "Lektion 11: Kleidung und mehr - Handwritten Notes"
+    "category": "Lektion 11: Kleidung und mehr - Pronouns"
   },
   {
     "article": "",
     "german": "ihr",
     "plural": "",
     "english": "her (dative)",
-    "category": "Lektion 11: Kleidung und mehr - Handwritten Notes"
+    "category": "Lektion 11: Kleidung und mehr - Pronouns"
   },
   {
     "article": "",
     "german": "uns",
     "plural": "",
     "english": "us",
-    "category": "Lektion 11: Kleidung und mehr - Handwritten Notes"
+    "category": "Lektion 11: Kleidung und mehr - Pronouns"
   },
   {
     "article": "",
     "german": "euch",
     "plural": "",
     "english": "you all",
-    "category": "Lektion 11: Kleidung und mehr - Handwritten Notes"
+    "category": "Lektion 11: Kleidung und mehr - Pronouns"
   },
   {
     "article": "",
     "german": "ihnen",
     "plural": "",
     "english": "them",
-    "category": "Lektion 11: Kleidung und mehr - Handwritten Notes"
+    "category": "Lektion 11: Kleidung und mehr - Pronouns"
   },
   {
     "article": "",
     "german": "Ihnen",
     "plural": "",
     "english": "You (formal dative)",
-    "category": "Lektion 11: Kleidung und mehr - Handwritten Notes"
+    "category": "Lektion 11: Kleidung und mehr - Pronouns"
   },
   {
     "article": "",
     "german": "der/die Jugendliche,-n",
     "plural": "",
     "english": "teenager",
-    "category": "Lektion 11: Kleidung und mehr - Handwritten Notes"
+    "category": "Lektion 11: Kleidung und mehr - Miscellaneous Nouns, Adjectives & Phrases"
   },
   {
     "article": "die",
     "german": "Hauptstadt",
     "plural": ",-\"e",
     "english": "main city",
-    "category": "Lektion 11: Kleidung und mehr - Handwritten Notes"
+    "category": "Lektion 11: Kleidung und mehr - Miscellaneous Nouns, Adjectives & Phrases"
   },
   {
     "article": "die",
     "german": "Erfindung",
     "plural": ",-en",
     "english": "invention",
-    "category": "Lektion 11: Kleidung und mehr - Handwritten Notes"
+    "category": "Lektion 11: Kleidung und mehr - Miscellaneous Nouns, Adjectives & Phrases"
   },
   {
     "article": "das",
     "german": "Souvenir",
     "plural": ",-s",
     "english": "souvenir",
-    "category": "Lektion 11: Kleidung und mehr - Handwritten Notes"
+    "category": "Lektion 11: Kleidung und mehr - Miscellaneous Nouns, Adjectives & Phrases"
   },
   {
     "article": "das",
     "german": "Schild",
     "plural": ",-er",
     "english": "plate,sign",
-    "category": "Lektion 11: Kleidung und mehr - Handwritten Notes"
+    "category": "Lektion 11: Kleidung und mehr - Miscellaneous Nouns, Adjectives & Phrases"
   },
   {
     "article": "die",
     "german": "Sache",
     "plural": ",-n",
     "english": "thing",
-    "category": "Lektion 11: Kleidung und mehr - Handwritten Notes"
+    "category": "Lektion 11: Kleidung und mehr - Miscellaneous Nouns, Adjectives & Phrases"
   },
   {
     "article": "das",
     "german": "Design",
     "plural": ",-s",
     "english": "design",
-    "category": "Lektion 11: Kleidung und mehr - Handwritten Notes"
+    "category": "Lektion 11: Kleidung und mehr - Miscellaneous Nouns, Adjectives & Phrases"
   },
   {
     "article": "die",
     "german": "Architektur",
     "plural": "",
     "english": "architecture",
-    "category": "Lektion 11: Kleidung und mehr - Handwritten Notes"
+    "category": "Lektion 11: Kleidung und mehr - Miscellaneous Nouns, Adjectives & Phrases"
   },
   {
     "article": "der",
     "german": "Hof",
     "plural": ",-\"e",
     "english": "courtyard",
-    "category": "Lektion 11: Kleidung und mehr - Handwritten Notes"
+    "category": "Lektion 11: Kleidung und mehr - Miscellaneous Nouns, Adjectives & Phrases"
   },
   {
     "article": "",
     "german": "ausgehen, er geht aus, ist ausgegangen",
     "plural": "",
     "english": "to go out",
-    "category": "Lektion 11: Kleidung und mehr - Handwritten Notes"
+    "category": "Lektion 11: Kleidung und mehr - Miscellaneous Nouns, Adjectives & Phrases"
   },
   {
     "article": "",
     "german": "ohne",
     "plural": "",
     "english": "without",
-    "category": "Lektion 11: Kleidung und mehr - Handwritten Notes"
+    "category": "Lektion 11: Kleidung und mehr - Miscellaneous Nouns, Adjectives & Phrases"
   },
   {
     "article": "",
     "german": "aktuell",
     "plural": "",
     "english": "update",
-    "category": "Lektion 11: Kleidung und mehr - Handwritten Notes"
+    "category": "Lektion 11: Kleidung und mehr - Miscellaneous Nouns, Adjectives & Phrases"
   },
   {
     "article": "",
     "german": "einfach",
     "plural": "",
     "english": "simply",
-    "category": "Lektion 11: Kleidung und mehr - Handwritten Notes"
+    "category": "Lektion 11: Kleidung und mehr - Miscellaneous Nouns, Adjectives & Phrases"
   },
   {
     "article": "",
     "german": "kreativ",
     "plural": "",
     "english": "creative",
-    "category": "Lektion 11: Kleidung und mehr - Handwritten Notes"
+    "category": "Lektion 11: Kleidung und mehr - Miscellaneous Nouns, Adjectives & Phrases"
   },
   {
     "article": "",
     "german": "vorgestern",
     "plural": "",
     "english": "day before yesterday",
-    "category": "Lektion 11: Kleidung und mehr - Handwritten Notes"
+    "category": "Lektion 11: Kleidung und mehr - Miscellaneous Nouns, Adjectives & Phrases"
   },
   {
     "article": "",
     "german": "auf jeden fall",
     "plural": "",
     "english": "in any case",
-    "category": "Lektion 11: Kleidung und mehr - Handwritten Notes"
+    "category": "Lektion 11: Kleidung und mehr - Miscellaneous Nouns, Adjectives & Phrases"
   },
   {
     "article": "",
     "german": "Quatsch!",
     "plural": "",
     "english": "rubbish!",
-    "category": "Lektion 11: Kleidung und mehr - Handwritten Notes"
+    "category": "Lektion 11: Kleidung und mehr - Miscellaneous Nouns, Adjectives & Phrases"
   },
   {
     "article": "",
     "german": "böse",
     "plural": "",
     "english": "angry",
-    "category": "Lektion 11: Kleidung und mehr - Handwritten Notes"
+    "category": "Lektion 11: Kleidung und mehr - Miscellaneous Nouns, Adjectives & Phrases"
   },
   {
     "article": "",
     "german": "Ich danke Ihnen.",
     "plural": "",
     "english": "I thank you",
-    "category": "Lektion 11: Kleidung und mehr - Handwritten Notes"
+    "category": "Lektion 11: Kleidung und mehr - Miscellaneous Nouns, Adjectives & Phrases"
   },
   {
     "article": "",
     "german": "gleich",
     "plural": "",
     "english": "same",
-    "category": "Lektion 11: Kleidung und mehr - Handwritten Notes"
+    "category": "Lektion 11: Kleidung und mehr - Miscellaneous Nouns, Adjectives & Phrases"
   }
 ];
