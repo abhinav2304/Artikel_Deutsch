@@ -14,6 +14,30 @@ let nouns = [];
 function initApp() {
     console.log("Initializing App with data size:", vocabularyData.length);
 
+    // Group and sort vocabularyData by article while preserving the existing sequential category order
+    const categorizedDict = {};
+    const categoryOrder = [];
+    vocabularyData.forEach(item => {
+        if (!categorizedDict[item.category]) {
+            categorizedDict[item.category] = [];
+            categoryOrder.push(item.category);
+        }
+        categorizedDict[item.category].push(item);
+    });
+
+    const articleOrder = { 'der': 1, 'die': 2, 'das': 3 };
+    vocabularyData.length = 0; // clear existing array inline to preserve bindings
+    categoryOrder.forEach(cat => {
+        const items = categorizedDict[cat];
+        items.sort((a, b) => {
+            const aVal = articleOrder[a.article] || 4; // 'der': 1, 'die': 2, 'das': 3, verbs/phrases: 4
+            const bVal = articleOrder[b.article] || 4;
+            if (aVal !== bVal) return aVal - bVal;
+            return a.german.localeCompare(b.german);
+        });
+        vocabularyData.push(...items);
+    });
+
     // Process Data
     nouns = vocabularyData.filter(item => ['der', 'die', 'das'].includes(item.article));
 
