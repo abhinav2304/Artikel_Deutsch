@@ -1,3 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>German Interactive Learner</title>
+    <style>
+:root {
+    /* Color Palette */
+    --bg-dark: #0f172a;
+    --bg-panel: rgba(30, 41, 59, 0.7);
+    --bg-card: rgba(30, 41, 59, 0.85);
+
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+
+    --accent: #6366f1;
+    --accent-hover: #4f46e5;
+
+    /* Article Colors */
+    --color-der: #3b82f6;
+    /* Cerulean Blue */
+    --color-die: #ef4444;
+    /* Crimson Red */
+    --color-das: #10b981;
+    /* Emerald Green */
+    --color-der-hover: #2563eb;
+    --color-die-hover: #dc2828;
+    --color-das-hover: #059669;
+
+    --glass-border: 1px solid rgba(255, 255, 255, 0.08);
+    --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    --radius-lg: 20px;
+    --radius-md: 12px;
+    --radius-sm: 8px;
+
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background: var(--bg-dark);
+    /* Subtle gradient background */
+    background: radial-gradient(circle at 15% 50%, rgba(99, 102, 241, 0.15), transparent 25%),
+        radial-gradient(circle at 85% 30%, rgba(239, 68, 68, 0.1), transparent 25%),
+        var(--bg-dark);
+    color: var(--text-primary);
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+/* App Layout */
+.app-container {
+    display: flex;
+    height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 280px;
+    background: var(--bg-panel);
+    backdrop-filter: blur(12px);
+    border-right: var(--glass-border);
+    padding: 2rem 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0 2rem;
+    margin-bottom: 3rem;
+    background: linear-gradient(135deg, #a8c0ff, #3f2b96);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.logo i {
+    color: #a8c0ff;
+    -webkit-text-fill-color: #a8c0ff;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.nav-links li {
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: var(--transition);
+    border-left: 3px solid transparent;
+}
+
+.nav-links li:hover,
+.nav-links li.active {
+    color: var(--text-primary);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.nav-links li.active {
+    border-left-color: var(--accent);
+}
+
+.nav-links li i {
+    width: 20px;
+    text-align: center;
+}
+
+/* Main Content Area */
+.content-area {
+    flex: 1;
+    position: relative;
+    overflow-y: auto;
+    padding: 3rem 4rem;
+}
+
+.view {
+    display: none;
+    animation: fadeIn 0.4s ease forwards;
+}
+
+.view.active-view {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.view-header {
+    margin-bottom: 2rem;
+}
+
+.view-header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.025em;
+}
+
+.view-header p {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+}
+
+/* Dashboard Options */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.stat-card {
+    background: var(--bg-card);
+    backdrop-filter: blur(16px);
+    border: var(--glass-border);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    box-shadow: var(--glass-shadow);
+    transition: var(--transition);
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+}
+
+.stat-card i {
+    font-size: 2rem;
+    color: var(--accent);
+    background: rgba(99, 102, 241, 0.1);
+    padding: 1rem;
+    border-radius: var(--radius-md);
+}
+
+.stat-info h3 {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+}
+
+.stat-info p {
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.quick-actions {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.action-card {
+    background: var(--bg-card);
+    backdrop-filter: blur(16px);
+    border: var(--glass-border);
+    border-radius: var(--radius-lg);
+    padding: 2.5rem 2rem;
+    text-align: center;
+    cursor: pointer;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.action-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, transparent 100%);
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.action-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.action-card:hover::before {
+    opacity: 1;
+}
+
+.icon-wrap {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin: 0 auto 1.5rem;
+}
+
+.icon-wrap.game {
+    background: rgba(59, 130, 246, 0.15);
+    color: #3b82f6;
+}
+
+.icon-wrap.cards {
+    background: rgba(16, 185, 129, 0.15);
+    color: #10b981;
+}
+
+.icon-wrap.map {
+    background: rgba(239, 68, 68, 0.15);
+    color: #ef4444;
+}
+
+.action-card h2 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.action-card p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Article Game Styles */
+#game-container {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.game-hud {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    padding: 1rem 2rem;
+    background: var(--bg-card);
+    border-radius: var(--radius-lg);
+    border: var(--glass-border);
+}
+
+.word-card {
+    background: var(--bg-card);
+    backdrop-filter: blur(16px);
+    border: var(--glass-border);
+    border-radius: var(--radius-lg);
+    padding: 4rem 2rem;
+    margin-bottom: 2rem;
+    box-shadow: var(--glass-shadow);
+    min-height: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.word-card h2 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.word-card .hint {
+    color: var(--text-secondary);
+    font-size: 1.2rem;
+}
+
+.article-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.btn-article {
+    flex: 1;
+    padding: 1.5rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+    border: none;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: var(--transition);
+    opacity: 0.9;
+}
+
+.btn-article:hover {
+    transform: scale(1.05);
+    opacity: 1;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.btn-article:active {
+    transform: scale(0.95);
+}
+
+.btn-article.der {
+    background: var(--color-der);
+}
+
+.btn-article.die {
+    background: var(--color-die);
+}
+
+.btn-article.das {
+    background: var(--color-das);
+}
+
+/* Flashcard Scene */
+.scene {
+    width: 500px;
+    height: 300px;
+    margin: 0 auto 3rem;
+    perspective: 1000px;
+}
+
+.card {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+    cursor: pointer;
+}
+
+.card.is-flipped {
+    transform: rotateY(180deg);
+}
+
+.card__face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    border-radius: var(--radius-lg);
+    background: var(--bg-card);
+    backdrop-filter: blur(16px);
+    border: var(--glass-border);
+    box-shadow: var(--glass-shadow);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card__face--back {
+    transform: rotateY(180deg);
+    background: rgba(30, 41, 59, 0.95);
+}
+
+.card-content {
+    text-align: center;
+}
+
+.card-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.fc-hint,
+.plural-text {
+    color: var(--text-secondary);
+}
+
+.article-badge {
+    display: inline-block;
+    padding: 0.25rem 1rem;
+    border-radius: 20px;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.article-badge.der {
+    background: var(--color-der);
+    color: white;
+}
+
+.article-badge.die {
+    background: var(--color-die);
+    color: white;
+}
+
+.article-badge.das {
+    background: var(--color-das);
+    color: white;
+}
+
+.article-badge.none {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+.flashcard-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.action-btn {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.action-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Primary Button */
+.primary-btn {
+    background: var(--accent);
+    color: white;
+    border: none;
+    padding: 1rem 3rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.primary-btn:hover {
+    background: var(--accent-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(99, 102, 241, 0.4);
+}
+
+/* Vocabulary List Styles */
+.vocab-controls {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+#vocab-search {
+    flex: 1;
+    padding: 1rem 1.5rem;
+    border-radius: var(--radius-md);
+    border: var(--glass-border);
+    background: var(--bg-card);
+    color: var(--text-primary);
+    font-size: 1.1rem;
+    outline: none;
+    transition: var(--transition);
+}
+
+#vocab-search:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.3);
+}
+
+#vocab-category-filter {
+    padding: 1rem 1.5rem;
+    border-radius: var(--radius-md);
+    border: var(--glass-border);
+    background: var(--bg-card);
+    color: var(--text-primary);
+    font-size: 1.1rem;
+    outline: none;
+    cursor: pointer;
+}
+
+.vocab-table-container {
+    background: var(--bg-card);
+    border-radius: var(--radius-lg);
+    border: var(--glass-border);
+    box-shadow: var(--glass-shadow);
+    overflow: hidden;
+    overflow-y: auto;
+    max-height: 60vh;
+}
+
+.vocab-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.vocab-table th,
+.vocab-table td {
+    padding: 1.25rem 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.vocab-table th {
+    background: rgba(255, 255, 255, 0.05);
+    font-weight: 600;
+    color: var(--text-secondary);
+    position: sticky;
+    top: 0;
+    backdrop-filter: blur(10px);
+    z-index: 10;
+}
+
+.vocab-table tr:hover td {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.vocab-article-badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: capitalize;
+}
+
+.vocab-article-badge.der {
+    background: var(--color-der);
+    color: white;
+}
+
+.vocab-article-badge.die {
+    background: var(--color-die);
+    color: white;
+}
+
+.vocab-article-badge.das {
+    background: var(--color-das);
+    color: white;
+}
+
+.vocab-article-badge.none {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-secondary);
+}
+</style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <div class="logo">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <span>Deutsch Meister</span>
+            </div>
+            <ul class="nav-links">
+                <li class="active" data-tab="dashboard">
+                    <i class="fa-solid fa-house"></i>
+                    <span>Dashboard</span>
+                </li>
+                <li data-tab="article-game">
+                    <i class="fa-solid fa-gamepad"></i>
+                    <span>Article Game</span>
+                </li>
+                <li data-tab="flashcards">
+                    <i class="fa-solid fa-clone"></i>
+                    <span>Flashcards</span>
+                </li>
+                <li data-tab="vocab-list">
+                    <i class="fa-solid fa-list"></i>
+                    <span>Vocabulary List</span>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="content-area">
+
+            <!-- Dashboard View -->
+            <section id="dashboard" class="view active-view">
+                <header class="view-header">
+                    <h1>Willkommen!</h1>
+                    <p>Track your progress and choose your learning module.</p>
+                </header>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <i class="fa-solid fa-book"></i>
+                        <div class="stat-info">
+                            <h3>Total Words</h3>
+                            <p id="total-words">0</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fa-solid fa-font"></i>
+                        <div class="stat-info">
+                            <h3>Nouns (with Articles)</h3>
+                            <p id="total-nouns">0</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fa-solid fa-bolt"></i>
+                        <div class="stat-info">
+                            <h3>Learning Streak</h3>
+                            <p>3 Days</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="quick-actions">
+                    <div class="action-card" onclick="document.querySelector('[data-tab=\'article-game\']').click()">
+                        <div class="icon-wrap game"><i class="fa-solid fa-gamepad"></i></div>
+                        <h2>Der/Die/Das Game</h2>
+                        <p>Master your German articles through a fast-paced interactive quiz.</p>
+                    </div>
+                    <div class="action-card" onclick="document.querySelector('[data-tab=\'flashcards\']').click()">
+                        <div class="icon-wrap cards"><i class="fa-solid fa-clone"></i></div>
+                        <h2>Smart Flashcards</h2>
+                        <p>Review vocabulary with spaced repetition and fluid 3D animations.</p>
+                    </div>
+                    <div class="action-card" onclick="document.querySelector('[data-tab=\'vocab-list\']').click()">
+                        <div class="icon-wrap list"><i class="fa-solid fa-list"></i></div>
+                        <h2>Vocabulary List</h2>
+                        <p>View, search, and study the entire dictionary of vocabulary.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Article Game View -->
+            <section id="article-game" class="view hidden">
+                <header class="view-header">
+                    <h1>Der, Die, or Das?</h1>
+                    <p>Select the correct article as fast as possible.</p>
+                </header>
+                <div id="game-container">
+                    <div class="game-hud">
+                        <span class="score">Score: <span id="game-score">0</span></span>
+                        <span class="timer">Time: <span id="game-timer">60s</span></span>
+                    </div>
+                    <div class="word-card">
+                        <h2 id="game-target-word">Laden...</h2>
+                        <p id="game-target-english" class="hint"></p>
+                    </div>
+                    <div class="article-buttons">
+                        <button class="btn-article der" onclick="checkArticle('der')">Der</button>
+                        <button class="btn-article die" onclick="checkArticle('die')">Die</button>
+                        <button class="btn-article das" onclick="checkArticle('das')">Das</button>
+                    </div>
+                    <button id="start-game-btn" class="primary-btn">Start Game</button>
+                </div>
+            </section>
+
+            <!-- Flashcards View -->
+            <section id="flashcards" class="view hidden">
+                <header class="view-header">
+                    <h1>Flashcards</h1>
+                    <p>Flip the cards to learn new vocabulary.</p>
+                </header>
+
+                <div class="flashcard-controls">
+                    <select id="flashcard-category">
+                        <option value="all">All Categories</option>
+                    </select>
+                </div>
+
+                <div class="scene scene--card">
+                    <div class="card" id="flashcard">
+                        <div class="card__face card__face--front">
+                            <div class="card-content">
+                                <h2 id="fc-front-text">Front</h2>
+                                <p class="fc-hint">Click to flip</p>
+                            </div>
+                        </div>
+                        <div class="card__face card__face--back">
+                            <div class="card-content">
+                                <span id="fc-article" class="article-badge der">Der</span>
+                                <h2 id="fc-back-text">Back</h2>
+                                <p id="fc-plural" class="plural-text">Plural</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flashcard-actions">
+                    <button class="action-btn" id="fc-prev"><i class="fa-solid fa-arrow-left"></i> Previous</button>
+                    <button class="action-btn" id="fc-next">Next <i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+            </section>
+
+            <!-- Vocabulary List View -->
+            <section id="vocab-list" class="view hidden">
+                <header class="view-header">
+                    <h1>Vocabulary Dictionary</h1>
+                    <p>Browse and search through all your vocabulary words.</p>
+                </header>
+                <div class="vocab-controls">
+                    <input type="text" id="vocab-search"
+                        placeholder="Search German or English (e.g., 'schuh' or 'shoe')...">
+                    <select id="vocab-category-filter">
+                        <option value="all">All Categories</option>
+                    </select>
+                </div>
+                <div class="vocab-table-container">
+                    <table class="vocab-table">
+                        <thead>
+                            <tr>
+                                <th>Article</th>
+                                <th>German</th>
+                                <th>Plural/Info</th>
+                                <th>English</th>
+                            </tr>
+                        </thead>
+                        <tbody id="vocab-tbody">
+                            <!-- Populated by JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    
+    <script>
 const vocabularyData = [
   {
     "article": "",
@@ -9898,3 +10688,295 @@ const vocabularyData = [
     "category": "Lektion 12: Urlaub - Andere wichtige Wörter und Wendungen (12)"
   }
 ];
+
+// --- Global State ---
+let currentView = 'dashboard';
+let nouns = [];
+
+function initApp() {
+    console.log("Initializing App with data size:", vocabularyData.length);
+
+    // Process Data
+    nouns = vocabularyData.filter(item => ['der', 'die', 'das'].includes(item.article));
+
+    // Update Dashboard Stats
+    document.getElementById('total-words').textContent = vocabularyData.length;
+    document.getElementById('total-nouns').textContent = nouns.length;
+
+    // Wire Navigation
+    const navLinks = document.querySelectorAll('.nav-links li');
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            const targetId = link.getAttribute('data-tab');
+            switchTab(targetId);
+
+            navLinks.forEach(l => l.classList.remove('active'));
+            link.classList.add('active');
+        });
+    });
+
+    // Initialize Submodules
+    initFlashcards();
+    initVocabList();
+}
+
+function switchTab(viewId) {
+    // Hide all views
+    document.querySelectorAll('.view').forEach(view => {
+        view.classList.add('hidden');
+        view.classList.remove('active-view');
+    });
+
+    // Show target view
+    const target = document.getElementById(viewId);
+    target.classList.remove('hidden');
+    target.classList.add('active-view');
+    currentView = viewId;
+
+    // Trigger module specific renders if necessary
+    if (viewId === 'article-game' && !gameActive) {
+        // Reset game UI
+        document.getElementById('game-target-word').textContent = "Ready?";
+        document.getElementById('start-game-btn').style.display = 'inline-block';
+        document.querySelector('.article-buttons').style.display = 'none';
+        document.getElementById('game-target-english').textContent = "";
+    }
+}
+
+// --- Module: Article Game ---
+let gameActive = false;
+let score = 0;
+let timeLeft = 60;
+let timer;
+let currentNoun = null;
+
+document.getElementById('start-game-btn').addEventListener('click', startGame);
+
+function startGame() {
+    gameActive = true;
+    score = 0;
+    timeLeft = 60;
+    updateGameHud();
+
+    document.getElementById('start-game-btn').style.display = 'none';
+    document.querySelector('.article-buttons').style.display = 'flex';
+
+    timer = setInterval(() => {
+        timeLeft--;
+        updateGameHud();
+        if (timeLeft <= 0) {
+            endGame();
+        }
+    }, 1000);
+
+    nextWord();
+}
+
+function nextWord() {
+    currentNoun = nouns[Math.floor(Math.random() * nouns.length)];
+    document.getElementById('game-target-word').textContent = currentNoun.german;
+    document.getElementById('game-target-english').textContent = currentNoun.english || "(No translation provided)";
+}
+
+function checkArticle(selected) {
+    if (!gameActive) return;
+
+    const wordCard = document.querySelector('.word-card');
+
+    if (selected === currentNoun.article) {
+        score += 10;
+        // visual feedback
+        wordCard.style.boxShadow = `0 0 30px var(--color-${selected})`;
+    } else {
+        score = Math.max(0, score - 5);
+        wordCard.style.boxShadow = `0 0 30px var(--color-die)`; // red pulse for error
+    }
+
+    setTimeout(() => {
+        wordCard.style.boxShadow = 'var(--glass-shadow)';
+    }, 300);
+
+    updateGameHud();
+    nextWord();
+}
+
+function updateGameHud() {
+    document.getElementById('game-score').textContent = score;
+    document.getElementById('game-timer').textContent = `${timeLeft}s`;
+}
+
+function endGame() {
+    clearInterval(timer);
+    gameActive = false;
+    document.getElementById('game-target-word').textContent = `Time's Up!`;
+    document.getElementById('game-target-english').textContent = `Final Score: ${score}`;
+    document.getElementById('start-game-btn').style.display = 'inline-block';
+    document.getElementById('start-game-btn').textContent = "Play Again";
+    document.querySelector('.article-buttons').style.display = 'none';
+}
+
+// --- Module: Flashcards ---
+let currentFlashcardIndex = 0;
+let flashcardList = [];
+
+function initFlashcards() {
+    flashcardList = [...vocabularyData];
+    // Populate categories
+    const categories = [...new Set(flashcardList.map(item => item.category))];
+    const select = document.getElementById('flashcard-category');
+    categories.forEach(cat => {
+        const option = document.createElement('option');
+        option.value = cat;
+        option.textContent = cat;
+        select.appendChild(option);
+    });
+
+    select.addEventListener('change', (e) => {
+        const cat = e.target.value;
+        if (cat === 'all') {
+            flashcardList = [...vocabularyData];
+        } else {
+            flashcardList = vocabularyData.filter(i => i.category === cat);
+        }
+        currentFlashcardIndex = 0;
+        renderFlashcard();
+    });
+
+    renderFlashcard();
+
+    // Card Flip Event
+    document.getElementById('flashcard').addEventListener('click', function () {
+        this.classList.toggle('is-flipped');
+    });
+
+    // Navigation
+    document.getElementById('fc-next').addEventListener('click', () => {
+        const card = document.getElementById('flashcard');
+        card.classList.remove('is-flipped');
+        setTimeout(() => {
+            currentFlashcardIndex = (currentFlashcardIndex + 1) % flashcardList.length;
+            renderFlashcard();
+        }, 150); // wait for flip halfway to swap content
+    });
+
+    document.getElementById('fc-prev').addEventListener('click', () => {
+        const card = document.getElementById('flashcard');
+        card.classList.remove('is-flipped');
+        setTimeout(() => {
+            currentFlashcardIndex = (currentFlashcardIndex - 1 + flashcardList.length) % flashcardList.length;
+            renderFlashcard();
+        }, 150);
+    });
+}
+
+function renderFlashcard() {
+    const data = flashcardList[currentFlashcardIndex];
+    if (!data) return;
+
+    // Front: Use english if available, else german
+    const frontText = data.english ? data.english : `*${data.german}*`;
+    document.getElementById('fc-front-text').textContent = frontText;
+
+    // Back: German + Article
+    document.getElementById('fc-back-text').textContent = data.german;
+    const badge = document.getElementById('fc-article');
+    if (data.article) {
+        badge.textContent = data.article.charAt(0).toUpperCase() + data.article.slice(1);
+        badge.className = `article-badge ${data.article}`;
+    } else {
+        badge.textContent = 'Verb/Other';
+        badge.className = `article-badge none`;
+    }
+
+    const plural = document.getElementById('fc-plural');
+    if (data.plural) {
+        plural.textContent = `Plural: ${data.plural}`;
+        plural.style.display = 'block';
+    } else {
+        plural.style.display = 'none';
+    }
+}
+
+// --- Module: Vocabulary List ---
+let vocabList = [];
+
+function initVocabList() {
+    vocabList = [...vocabularyData];
+
+    // Populate categories in filter
+    const categories = [...new Set(vocabList.map(item => item.category))];
+    const select = document.getElementById('vocab-category-filter');
+    categories.forEach(cat => {
+        const option = document.createElement('option');
+        option.value = cat;
+        option.textContent = cat;
+        select.appendChild(option);
+    });
+
+    // Event Listeners for search and filter
+    document.getElementById('vocab-search').addEventListener('input', renderVocabList);
+    document.getElementById('vocab-category-filter').addEventListener('change', renderVocabList);
+
+    // Initial Render
+    renderVocabList();
+}
+
+function renderVocabList() {
+    const tbody = document.getElementById('vocab-tbody');
+    const searchTerm = document.getElementById('vocab-search').value.toLowerCase();
+    const categoryFilter = document.getElementById('vocab-category-filter').value;
+
+    tbody.innerHTML = '';
+
+    const filteredData = vocabList.filter(item => {
+        const matchesSearch = item.german.toLowerCase().includes(searchTerm) ||
+            (item.english && item.english.toLowerCase().includes(searchTerm));
+        const matchesCategory = categoryFilter === 'all' || item.category === categoryFilter;
+        return matchesSearch && matchesCategory;
+    });
+
+    filteredData.forEach(item => {
+        const tr = document.createElement('tr');
+
+        // Article Badge
+        const tdArticle = document.createElement('td');
+        const badge = document.createElement('span');
+        if (item.article) {
+            badge.className = `vocab-article-badge ${item.article}`;
+            badge.textContent = item.article;
+        } else {
+            badge.className = `vocab-article-badge none`;
+            badge.textContent = '-';
+        }
+        tdArticle.appendChild(badge);
+
+        // German Word
+        const tdGerman = document.createElement('td');
+        tdGerman.textContent = item.german;
+        tdGerman.style.fontWeight = '600';
+
+        // Plural / Info
+        const tdPlural = document.createElement('td');
+        tdPlural.textContent = item.plural || '-';
+        tdPlural.style.color = 'var(--text-secondary)';
+
+        // English
+        const tdEnglish = document.createElement('td');
+        tdEnglish.textContent = item.english || '-';
+
+        tr.appendChild(tdArticle);
+        tr.appendChild(tdGerman);
+        tr.appendChild(tdPlural);
+        tr.appendChild(tdEnglish);
+
+        tbody.appendChild(tr);
+    });
+}
+
+// Boot
+window.onload = initApp;
+
+</script>
+</body>
+
+</html>
