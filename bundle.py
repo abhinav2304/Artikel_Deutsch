@@ -21,14 +21,10 @@ def bundle_app():
         app_content = f.read()
 
     # Create the standalone HTML structure
-    # Replace external links with inline styles and scripts
-    
-    # 1. Replace the CSS link with a <style> tag
     css_link_tag = '<link rel="stylesheet" href="css/style.css">'
     inline_css = f'<style>\n{css_content}\n</style>'
     html_content = html_content.replace(css_link_tag, inline_css)
     
-    # 2. Replace the JS script tags with <script> tags
     data_script_tag = '<script src="js/data.js"></script>'
     app_script_tag = '<script src="js/app.js"></script>'
     
@@ -37,7 +33,10 @@ def bundle_app():
     html_content = html_content.replace(data_script_tag, '')
     html_content = html_content.replace(app_script_tag, inline_js)
 
-    output_file = '/Users/abhinav/German_Artikels with genders/german_learning_app.html'
+    output_dir = '/Users/abhinav/German_Artikels with genders/standalone'
+    os.makedirs(output_dir, exist_ok=True)
+    output_file = os.path.join(output_dir, 'german_learning_app.html')
+    
     with open(output_file, 'w', encoding='utf-8') as f:
         f.write(html_content)
         

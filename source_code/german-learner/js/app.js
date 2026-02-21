@@ -197,6 +197,28 @@ function renderFlashcard() {
         badge.className = `article-badge none`;
     }
 
+    // Reference Image Setup
+    const fcImage = document.getElementById('fc-image');
+    if (data.english) {
+        // use just the first English word for the image search to be safe
+        let searchWord = data.english.split(',')[0].trim().split(' ')[0];
+        // filter out 'to' for verbs
+        if (searchWord.toLowerCase() === 'to' && data.english.split(' ').length > 1) {
+            searchWord = data.english.split(' ')[1];
+        }
+        
+        // Use a placeholder image service based on the english keyword
+        fcImage.src = `https://loremflickr.com/400/300/${encodeURIComponent(searchWord)}`;
+        fcImage.style.display = 'block';
+        
+        // Hide if the image fails to load
+        fcImage.onerror = () => {
+             fcImage.style.display = 'none';
+        };
+    } else {
+        fcImage.style.display = 'none';
+    }
+
     const plural = document.getElementById('fc-plural');
     if (data.plural) {
         plural.textContent = `Plural: ${data.plural}`;
