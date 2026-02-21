@@ -1,3 +1,12 @@
+function parseCategoryInfo(catString) {
+    if (!catString) return { main: 'Unknown', sub: null };
+    if (catString.includes(' - ')) {
+        const parts = catString.split(' - ');
+        return { main: parts[0], sub: parts[1] };
+    }
+    return { main: catString, sub: null };
+}
+
 // --- Global State ---
 let currentView = 'dashboard';
 let nouns = [];
@@ -131,21 +140,60 @@ let flashcardList = [];
 function initFlashcards() {
     flashcardList = [...vocabularyData];
     // Populate categories
-    const categories = [...new Set(flashcardList.map(item => item.category))];
-    const select = document.getElementById('flashcard-category');
-    categories.forEach(cat => {
+    const allParsed = flashcardList.map(item => parseCategoryInfo(item.category));
+    const mainCategories = [...new Set(allParsed.map(p => p.main))];
+    const catSelect = document.getElementById('flashcard-category');
+    const subSelect = document.getElementById('flashcard-subcategory');
+
+    mainCategories.forEach(main => {
         const option = document.createElement('option');
-        option.value = cat;
-        option.textContent = cat;
-        select.appendChild(option);
+        option.value = main;
+        option.textContent = main;
+        catSelect.appendChild(option);
     });
 
-    select.addEventListener('change', (e) => {
-        const cat = e.target.value;
-        if (cat === 'all') {
+    catSelect.addEventListener('change', (e) => {
+        const selectedMain = e.target.value;
+        if (selectedMain === 'all') {
+            subSelect.style.display = 'none';
             flashcardList = [...vocabularyData];
         } else {
-            flashcardList = vocabularyData.filter(i => i.category === cat);
+            // Find subcategories for this main category
+            const relevantParsed = allParsed.filter(p => p.main === selectedMain && p.sub);
+            const subCategories = [...new Set(relevantParsed.map(p => p.sub))];
+
+            if (subCategories.length > 0) {
+                subSelect.style.display = 'inline-block';
+                subSelect.innerHTML = '<option value="all">All Subcategories</option>';
+                subCategories.forEach(sub => {
+                    const option = document.createElement('option');
+                    option.value = sub;
+                    option.textContent = sub;
+                    subSelect.appendChild(option);
+                });
+            } else {
+                subSelect.style.display = 'none';
+            }
+
+            // Filter flashcardList by main category initially
+            flashcardList = vocabularyData.filter(i => parseCategoryInfo(i.category).main === selectedMain);
+        }
+        subSelect.value = 'all'; // reset subcategory
+        currentFlashcardIndex = 0;
+        renderFlashcard();
+    });
+
+    subSelect.addEventListener('change', (e) => {
+        const selectedMain = catSelect.value;
+        const selectedSub = e.target.value;
+
+        if (selectedSub === 'all') {
+            flashcardList = vocabularyData.filter(i => parseCategoryInfo(i.category).main === selectedMain);
+        } else {
+            flashcardList = vocabularyData.filter(i => {
+                const parsed = parseCategoryInfo(i.category);
+                return parsed.main === selectedMain && parsed.sub === selectedSub;
+            });
         }
         currentFlashcardIndex = 0;
         renderFlashcard();
@@ -213,18 +261,45 @@ function initVocabList() {
     vocabList = [...vocabularyData];
 
     // Populate categories in filter
-    const categories = [...new Set(vocabList.map(item => item.category))];
-    const select = document.getElementById('vocab-category-filter');
-    categories.forEach(cat => {
+    const allParsed = vocabList.map(item => parseCategoryInfo(item.category));
+    const mainCategories = [...new Set(allParsed.map(p => p.main))];
+    const catSelect = document.getElementById('vocab-category-filter');
+    const subSelect = document.getElementById('vocab-subcategory-filter');
+
+    mainCategories.forEach(main => {
         const option = document.createElement('option');
-        option.value = cat;
-        option.textContent = cat;
-        select.appendChild(option);
+        option.value = main;
+        option.textContent = main;
+        catSelect.appendChild(option);
     });
 
-    // Event Listeners for search and filter
+    catSelect.addEventListener('change', (e) => {
+        const selectedMain = e.target.value;
+        if (selectedMain === 'all') {
+            subSelect.style.display = 'none';
+        } else {
+            const relevantParsed = allParsed.filter(p => p.main === selectedMain && p.sub);
+            const subCategories = [...new Set(relevantParsed.map(p => p.sub))];
+
+            if (subCategories.length > 0) {
+                subSelect.style.display = 'inline-block';
+                subSelect.innerHTML = '<option value="all">All Subcategories</option>';
+                subCategories.forEach(sub => {
+                    const option = document.createElement('option');
+                    option.value = sub;
+                    option.textContent = sub;
+                    subSelect.appendChild(option);
+                });
+            } else {
+                subSelect.style.display = 'none';
+            }
+        }
+        subSelect.value = 'all';
+        renderVocabList();
+    });
+
+    subSelect.addEventListener('change', renderVocabList);
     document.getElementById('vocab-search').addEventListener('input', renderVocabList);
-    document.getElementById('vocab-category-filter').addEventListener('change', renderVocabList);
 
     // Initial Render
     renderVocabList();
@@ -234,14 +309,19 @@ function renderVocabList() {
     const tbody = document.getElementById('vocab-tbody');
     const searchTerm = document.getElementById('vocab-search').value.toLowerCase();
     const categoryFilter = document.getElementById('vocab-category-filter').value;
+    const subcategoryFilter = document.getElementById('vocab-subcategory-filter').value;
 
     tbody.innerHTML = '';
 
     const filteredData = vocabList.filter(item => {
         const matchesSearch = item.german.toLowerCase().includes(searchTerm) ||
             (item.english && item.english.toLowerCase().includes(searchTerm));
-        const matchesCategory = categoryFilter === 'all' || item.category === categoryFilter;
-        return matchesSearch && matchesCategory;
+
+        const parsed = parseCategoryInfo(item.category);
+        const matchesCategory = categoryFilter === 'all' || parsed.main === categoryFilter;
+        const matchesSubcategory = subcategoryFilter === 'all' || parsed.sub === subcategoryFilter;
+
+        return matchesSearch && matchesCategory && matchesSubcategory;
     });
 
     filteredData.forEach(item => {
